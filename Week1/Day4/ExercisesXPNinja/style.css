@@ -1,0 +1,50 @@
+body {
+
+}
+
+.log-in {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	text-align: center;
+	justify-content: stretch;
+	align-items: stretch;
+	width: 45%;
+	height: 100%;
+	padding: 20px;
+	float: left;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+i {
+	font-size: 20px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.icons {
+	text-align: center;
+}
+
+.register {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	text-align: center;
+	justify-content: space-between;
+	align-items: center;
+	width: 45%;
+	height: 100%;
+	padding: 50px;
+	margin-top: 40px;
+	float: right;
+  	background-image: linear-gradient(to bottom right, blue, white);
+}
