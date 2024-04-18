@@ -1,0 +1,54 @@
+#cat-senses {
+	margin-left: 60px;
+}
+
+#media {
+	text-align: center;
+}
+
+.flex-container {
+}
+
+#heading {
+	display: flex-block;
+	width: 84.7%;
+	margin: auto;
+	border-top: 2px solid red;
+	border-bottom: 2px solid red;
+	border-left: 1px solid red;
+	border-right: 1px solid red;
+	text-align: center;
+}
+
+table {
+	display: flex-block;
+	flex-direction: cloumn;
+	width: 85%;
+	margin: auto;
+	text-align: center;
+}
+
+table th {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+table td {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding-top: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 20px;
+}
+
+img {
+	display: flex;
+	margin: auto;
+	width: 85%;
+	height: auto;
+}

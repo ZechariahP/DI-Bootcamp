@@ -1,0 +1,103 @@
+body {
+	background-image: url(pexels-kellie-churchman-1001682.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.topnav {
+	padding: 10px;
+	background-color: lightgray;
+	overflow: hidden;
+}
+
+.topnav a {
+	margin-left: 90px;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav button {
+	float: right;
+	margin-right: 90px;
+	background-color: blue;
+	border-radius: 4px;
+	color: white;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	height: 250px;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+}
+
+#title {
+	padding: 35px;
+	font-size: 25px;
+	text-align: center;
+}
+
+body button {
+	background-color: blue;
+	border-radius: 4px;
+	color: white;
+}
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	background-color: lightgray;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	margin-top: 180px;
+	align-items: flex-end;
+}
+
+i {
+	display: block;
+	font-size: 50px;
+	text-align: center;
+}
+
+p {
+	display: block;
+	font-size: 12px;
+	text-align: center;
+}
+
+h2 {
+	display: block;
+	font-size: 18px;
+	text-align: center;
+}
+
+#left {
+	width: 150px;
+	padding-top: 30px;
+	padding-left: 60px;
+	margin: auto;
+	text-align: center;
+}
+
+#middle {
+	width: 150px;
+	padding-top: 30px;
+	text-align: center;
+	margin: auto;
+}
+
+#right {
+	width: 150px;
+	padding-top: 30px;
+	padding-right: 60px;
+	text-align: center;
+	margin: auto;
+}
