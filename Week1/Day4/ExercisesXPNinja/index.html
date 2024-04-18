@@ -11,30 +11,54 @@
 <body>
 	<div>
 		<div class="log-in">
-			<h1>Log In</h1>
-			<input type="text" placeholder="email" name="uname" value="email"><br><br>
-			<input type="text" placeholder="password" name="psw" value="password"><br><br>
-			<span>
-				<label style="float: left;">
-					<input type="checkbox" checked="checked" name="remember" >Remember Me
-				</label>
-				<span class="psw" style="float: right;"><a href="#">Forgot password?</a></span>
-			</span><br><br>
-			<button type="submit">Log In</button>
-			<p>------------- Or Connect with -------------</p>
-			<span class="icons">
-				<i class="fa-brands fa-facebook-f"></i>
-				<span><i class="fa-brands fa-twitter"></i></span>
-				<span><i class="fa-brands fa-github"></i></span>
-				<span><i class="fa-brands fa-linkedin-in"></i></span><br>
-			</span>
-			<p>&copy; 2020</p>
-		</div>			
+			<ul class="spaceBetween" style="list-style-type: none;"> 
+			    <li class="flex-item"> 
+			      <h1 style="position: relative; margin-right: 30px; margin-bottom: 0;">Log In</h1> 
+			    </li> 
+			    <li class="flex-item">
+			    	<input type="text" placeholder="email" name="uname" value="email" style="width: 40vw;"><br><br>
+			    	<input type="text" placeholder="password" name="psw" value="password" style="width: 40vw;"><br><br>
+					<span> 
+						<label style="float: left;">
+							<input type="checkbox" checked="checked" name="remember">Remember Me
+						</label>
+						<span class="psw" style="float: right;"><a href="#">Forgot password?</a></span>
+					</span><br><br>
+			    </li> 
+			    <li class="flex-item"> 
+					<button type="submit" style="width: 40vw;">Log In</button> 
+			    </li> 
+			    <li class="flex-item"> 
+			    	<p>Or Connect with</p>
+			    </li> 
+			    <li class="flex-item"> 
+			    	<span class="icons">
+						<i class="fa-brands fa-facebook-f"></i>
+						<span><i class="fa-brands fa-twitter"></i></span>
+						<span><i class="fa-brands fa-github"></i></span>
+						<span><i class="fa-brands fa-linkedin-in"></i></span><br>
+					</span>
+			    </li> 
+			    <li class="flex-item"> 
+			      	<p>&copy; 2020</p>
+			    </li> 
+			</ul> 
+		</div>
+
 		<div class="register">
-			<i class="fa-solid fa-user-plus"></i>
-			<h1>Hello, friend!</h1>
-			<p>Enter your personal details and start your journey with us</p>
-			<button type="submit" class="registerbtn">Register<i class="fa-solid fa-circle-arrow-right"></i></i></button>
+			<ul class="spaceBetween" style="list-style-type: none;">
+				<li class="flex-item">
+					<i class="fa-solid fa-user-plus"></i>  
+			    </li> 
+				<li class="flex-item">
+					<h1>Hello, friend!</h1>
+				</li>
+				<li class="flex-item">
+					<p>Enter your personal details and start your journey with us</p>
+				</li>
+				<li class="flex-item">
+					<button type="submit" class="registerbtn">Register<i class="fa-solid fa-circle-arrow-right"></i></i></button>
+				</li>
 		</div>
 	</div>
 </body>

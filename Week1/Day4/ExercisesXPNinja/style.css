@@ -1,50 +1,62 @@
-body {
+html, body {
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
 
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.spaceBetween { 
+    align-content: space-around;
 }
 
 .log-in {
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
+	flex-wrap: wrap; 
 	text-align: center;
-	justify-content: stretch;
-	align-items: stretch;
-	width: 45%;
-	height: 100%;
-	padding: 20px;
+	width: 50vw;
+	height: 100vh;
 	float: left;
+	background: lightgray;
+
 }
 
-h1 {
-	text-align: center;
+.icons {
+	padding: 2%;
 }
 
-p {
-	text-align: center;
-}
+.flex-item {  
+	padding: 30px;   
+    line-height: 10px;
+} 
 
 i {
-	font-size: 20px;
+	font-size: 30px;
+	margin: 10px;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 }
 
-.icons {
-	text-align: center;
+.fa-solid.fa-user-plus {
+	font-size: 100px;
 }
 
 .register {
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
+	flex-wrap: wrap; 
 	text-align: center;
-	justify-content: space-between;
 	align-items: center;
-	width: 45%;
-	height: 100%;
-	padding: 50px;
-	margin-top: 40px;
+	justify-content: center;
+	width: 50vw;
+	height: 100vh;
 	float: right;
   	background-image: linear-gradient(to bottom right, blue, white);
+  	background-size: cover;
 }
