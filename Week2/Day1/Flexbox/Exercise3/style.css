@@ -1,0 +1,32 @@
+section {
+	width: 100vw;
+	height: 15vh;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+
+.div1 {
+	background-color: blue;
+	color: white;
+	width: 10vw;
+	height:15vh;
+	text-align: center;
+}
+
+.div2 {
+	background-color: purple;
+	color: white;
+	width: 50vw;
+	height: 15vh;
+	text-align: center;
+
+}
+
+.div3 {
+	background-color: red;
+	color: white;
+	width: 40vw;
+	height: 15vh;
+	text-align: center;
+}

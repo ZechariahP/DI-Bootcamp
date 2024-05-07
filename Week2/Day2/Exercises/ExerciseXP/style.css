@@ -1,0 +1,97 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(Sea_Background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.header {
+	grid-area: header;
+	text-align: center;
+}
+
+h3 {
+	font-size: 30px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 15px;
+	text-align: center;
+}
+
+p {
+	font-size: 10px;
+	text-align: center;
+}
+
+.box1 {
+	text-align: center;
+}
+
+.card {
+	float: inline-start;
+	width: 320px;
+	height: 260px;
+	background-color: white;
+}
+
+.bottom-content {
+	float: inline-end;
+	width: 320px;
+	height: 100px;
+	margin-top: 100px;
+}
+
+#bottom-one {
+	background-color: magenta;
+}
+
+#bottom-two {
+	background-color: blue;
+}
+
+#bottom-three {
+	background-color: seagreen;
+}
+
+#left {
+	grid-area: left;
+}
+
+#middle {
+	grid-area: middle;
+}
+
+#right {
+	grid-area: right;
+}
+
+#one {
+	grid-area: one;
+	margin-top: 0px;
+}
+
+#two {
+	grid-area: two;
+	margin-top: 100px;
+}
+
+#three {
+	grid-area: three;
+	margin-top: 50px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-areas: 
+	'header header header'
+	'left middle right'
+	'one two three';
+	grid-template-rows: 115px 150px auto;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-items: center;
+}

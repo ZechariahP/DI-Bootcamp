@@ -1,0 +1,30 @@
+section {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.div1 {
+	background-color: blue;
+	width: 100vw;
+	height: 33vh;
+	text-align: center;
+}
+
+.div2 {
+	background-color: blue;
+	width: 20vw;
+	height: 33vh;
+	text-align: center;
+
+}
+
+.div3 {
+	background-color: blue;
+	width: 100vw;
+	height: 33vh;
+	text-align: center;
+}

@@ -1,0 +1,54 @@
+
+section {
+  width: 56vw;
+  height: 85vh;
+  border: 2px solid black;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sideBar content"
+    "sideBar content"
+    "sideBar content"
+    "footer footer";
+  grid-template-rows: 5vh 20vh 20vh 20vh 17vh;
+  grid-template-columns: 18vw 38vw;
+  margin: auto;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+#header {
+  grid-area: header;
+  background-color: white;
+  margin-bottom: 1vh;
+}
+
+#sideBar {
+  background-color: lightcoral;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+#content {
+  background-color: lightsteelblue;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.card {
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+#footer {
+  grid-area: footer;
+  background-color: lightgreen;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}

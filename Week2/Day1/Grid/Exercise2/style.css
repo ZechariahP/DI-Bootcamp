@@ -1,0 +1,92 @@
+.item1 { 
+grid-area: header;
+width: 450px;
+height: 41px;
+background-color: blue;
+color: white; 
+}
+
+.item2 { 
+grid-area: hero;
+width:150px;
+height:120px;
+background-color: pink;
+color: white;
+}
+
+.item3 {
+grid-area: main-content; 
+width: 290px;
+height: 200px;
+background-color: orange;
+color: white;
+}
+
+.item4 {
+grid-area: sidebar;
+width: 150px;
+height: 170px;
+background-color: green;
+color: white; 
+}
+
+.item5 {
+grid-area: extra-content;
+width: 290px;
+height: 90px;
+background-color: lightcoral;
+color: white;
+}
+
+.item6 {
+grid-area: related-images;
+width: 335px;
+height: 72px;
+background-color: brown;
+color: white;
+}
+
+.item7 {
+grid-area: related-posts;
+width: 105px;
+height: 72px;
+background-color: pink;
+color: white;
+}
+
+.item8 {
+grid-area: footer;
+width: 450px;
+height: 41px;
+background-color: orange;
+color: white;
+}
+
+.grid-container {
+  display: grid;
+  width: 450px;
+  height: 700px;
+  grid-template-areas: 
+  'header header header header header'
+  'hero hero main-content main-content main-content'
+  'hero hero main-content main-content main-content'
+  'hero hero main-content main-content main-content'
+  'sidebar sidebar main-content main-content main-content'
+  'sidebar sidebar main-content main-content main-content'
+  'sidebar sidebar extra-content extra-content extra-content'
+  'sidebar sidebar extra-content extra-content extra-content'
+  'related-images related-images related-images related-posts related-posts'
+  'related-images related-images related-images related-posts related-posts'
+  'footer footer footer footer footer';
+  gap: 10px;
+  background-color: white;
+  padding: 6px;
+  margin: auto;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px; 
+}
+
