@@ -95,3 +95,17 @@ p {
 	grid-template-columns: 1fr 1fr 1fr;
 	justify-items: center;
 }
+
+@media screen and (max-width: 667px) {
+	.grid-container {
+		display: grid;
+		grid-template-areas:
+		'header header header'
+		'left middle right'
+		'one one one'
+		'two two two'
+		'three three three';
+		grid-template-rows: 115px 150px auto auto auto;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
