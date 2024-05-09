@@ -1,0 +1,14 @@
+body {
+	background-image: url(CoffeeBackgroundPicture.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+header {
+	margin-left: 18vw;
+	margin-right: 18vw;
+}
+
+h1 {
+	margin-top: 70px;
+}
