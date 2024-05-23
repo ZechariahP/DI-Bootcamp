@@ -41,12 +41,12 @@ for (let i = 0; i < colors.length; i++) {
 }
 //Exercise 3: Repeat The Question
 
-//while (true) {
-//	let answer = prompt("Please enter a number");
-//	let number = Number(answer);
+while (true) {
+	let answer = prompt("Please enter a number");
+	let number = Number(answer);
 
-//	if (number >= 10) break;
-//}
+	if (number >= 10) break;
+}
 //Exercise 4: Building Management
 const building = {
     numberOfFloors: 4,

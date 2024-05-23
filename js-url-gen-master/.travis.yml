@@ -1,0 +1,14 @@
+dist: focal
+language: node_js
+node_js:
+  - "14"
+  - "16"
+#  - "18" # Not supported yet (ref. error:0308010C:digital envelope routines::unsupported)
+script:
+  - npm run lint
+  - npm run test
+
+notifications:
+  email:
+    recipients:
+      - sdk_developers@cloudinary.com
