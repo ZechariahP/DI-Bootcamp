@@ -14,9 +14,6 @@ const people = ["Greg", "Mary", "Devon", "James"];
 	console.log(last);
 	console.log(people);
 	//Part II - Loops
-
-	
-
 	for (let i = 0; i < people.length; i++) {
 		console.log(people[i]);
 	}
@@ -40,7 +37,6 @@ for (let i = 0; i < colors.length; i++) {
 	console.log("My " + (suffix[i]) + " choice is " + colors[i]);
 }
 //Exercise 3: Repeat The Question
-
 while (true) {
 	let answer = prompt("Please enter a number");
 	let number = Number(answer);
