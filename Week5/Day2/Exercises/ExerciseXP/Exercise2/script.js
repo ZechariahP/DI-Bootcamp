@@ -11,7 +11,7 @@
     //<ul class="usersAnswer"></ul>
 
 //1. Retrieve the form and console.log it.
-const form = document.querySelector("form");
+const form = document.forms[0];
 console.log(form);
 //2. Retrieve the inputs by their id and console.log them.
 const firstName = document.getElementById("fname");
@@ -33,9 +33,7 @@ console.log(form, firstNameValue.value, lastNameValue.value);
 
 function logFormInputs(e) {
     e.preventDefault();
-    const firstNameValueE = document.querySelector("[name=firstname]");
-    const lastNameValueE = document.querySelector("[name=lastname]");   
-    
+ 
     console.log(firstName.value, lastName.value);
     if (firstName.value === "" || lastName.value === "") {
         alert("Please fill in all fields");
