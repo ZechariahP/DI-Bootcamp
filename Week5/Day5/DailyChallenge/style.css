@@ -1,0 +1,28 @@
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+li *{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+li i{
+    --width: 16px;
+    width: var(--width);
+    height: var(--width);
+}
+
+li *::before {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
