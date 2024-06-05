@@ -1,4 +1,12 @@
 const text = document.getElementById('text');
+text.addEventListener("input", function(e) {
+    text.value = "/^[A-Za-z]+$/";
+    /*if (text.value.length > 0) {
+        text.style.border = "2px solid green";
+    } else {
+        text.style.border = "2px solid red";
+    }*/
+});
 
 const button = document.getElementsByTagName("button")[0];;
 button.addEventListener("click", message);
