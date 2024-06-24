@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+</head>
+<body>
+    <form id="taskForm">
+        <ul>
+        <li>
+            <input type="text" id="taskName" placeholder="Name" required>
+        </li>
+        <li>
+            <textarea id="taskDescription" placeholder="Description" required></textarea>
+        </li>
+        <li>
+            <label for="taskStart">Start Date and Time:</label>
+            <input type="datetime-local" id="taskStart" required>
+        </li>
+        <li>
+            <label for="taskEnd">End Date and Time:</label>
+            <input type="datetime-local" id="taskEnd" required>
+        </li>
+            <button type="submit">Submit</button>
+        </ul>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
