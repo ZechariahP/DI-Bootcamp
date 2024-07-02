@@ -3,6 +3,22 @@
 //1. Create an HTML file, that contains a section (for now the section is empty), and a button “Generate Quote”.
 
 //2. In the Javascript file, create an array of objects. Each object has 3 keys : id, author and quote. The id must start at 0, and is incremented for every new quote. So the first quote will have the id 0, the second quote the id 1, the third quote the id 3 ect…
+//3. Populate the array with a few quotes that you like.
+//4. When the “Generate Quote” button is pressed, retrieve randomly a quote (ie. an object), and display it in the DOM - like the image above.
+//Important: When clicking on the button, make sure you don’t display the same quote twice in a row.
+//Part 2 : Add Buttons
+//1. In the HTML file, create a form with the inputs “Quote” and “Author” and a button. So when you click on the button, you can add a new quote to the array of object.
+//Important: Don’t forget to set the id of the new quotes
+//2. In the HTML file, under the displayed quote, create a few more buttons:
+//A button that gives the number of character inside each quote (space included)
+//A button that gives the number of character inside each quote (space NOT included)
+//A button that gives the number of words in each quote
+//A button “Like” for the user to like a quote. Hint : add a new key to each object that will represent the number of “likes”.
+//Part 3 : Filter Form
+//1. Create a form, that will filter the quotes depending on the name of the author. When the button of the form is clicked, display all the quotes from this specific author.
+
+//2. Instead of showing all the quotes of the specific author. Show only one quote, and add a button “Previous” and a button “Next” that will display the next or previous quote.
+
 const Arr1 = [{id: 0, author: "J.K. Rowling", quote: "Indifference and neglect often do much more damage than outright dislike."},
     {id: 1, author: "Albert Einstein", quote: "Imagination is more important than knowledge."},
     {id: 2, author: "Oscar Wilde", quote: "To live is the rarest thing in the world. Most people exist, that is all."},
@@ -19,12 +35,8 @@ const Arr1 = [{id: 0, author: "J.K. Rowling", quote: "Indifference and neglect o
     {id: 13, author: "David Ben-Gurion", quote:"In Israel, in order to be a realist you must believe in miracles."},
     {id: 14, author: "David Ben-Gurion", quote: "Let me tell you the one thing I have against Moses. He took us forty years into the desert in order to bring us to the one place in the Middle East that has no oil!"},
     {id: 15, author: "David Ben-Gurion", quote: "Anyone who believes you can't change history has never tried to write his memoirs."},
-]
+];
 
-//3. Populate the array with a few quotes that you like.
-
-//4. When the “Generate Quote” button is pressed, retrieve randomly a quote (ie. an object), and display it in the DOM - like the image above.
-//Important: When clicking on the button, make sure you don’t display the same quote twice in a row.
 const button = document.getElementById("generate-quote");
 const section = document.querySelector("section");
 let currentQuote = {};
@@ -37,10 +49,6 @@ button.addEventListener("click", () => {
     section.innerHTML = `<p>${currentQuote.quote}</p><p>${currentQuote.author}</p>`;
 });
 
-
-//Part 2 : Add Buttons
-//1. In the HTML file, create a form with the inputs “Quote” and “Author” and a button. So when you click on the button, you can add a new quote to the array of object.
-//Important: Don’t forget to set the id of the new quotes
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -57,11 +65,6 @@ form.addEventListener("submit", (e) => {
     document.querySelector("#author").value = "";
 });
 
-//2. In the HTML file, under the displayed quote, create a few more buttons:
-//A button that gives the number of character inside each quote (space included)
-//A button that gives the number of character inside each quote (space NOT included)
-//A button that gives the number of words in each quote
-//A button “Like” for the user to like a quote. Hint : add a new key to each object that will represent the number of “likes”.
 const buttonChar = document.getElementById("char-count");
 const buttonCharNoSpace = document.getElementById("char-count-no-space");
 const buttonWord = document.getElementById("word-count");
@@ -88,50 +91,36 @@ buttonLike.addEventListener("click", () => {
     section.innerHTML = `<p>${currentQuote.quote}</p><p>${currentQuote.author}</p><p>${currentQuote.likes} like</p>`;
 });
 
-
-//Part 3 : Filter Form
-//1. Create a form, that will filter the quotes depending on the name of the author. When the button of the form is clicked, display all the quotes from this specific author.
-
-//2. Instead of showing all the quotes of the specific author. Show only one quote, and add a button “Previous” and a button “Next” that will display the next or previous quote.
 document.addEventListener('DOMContentLoaded', () => {
     const filterButton = document.querySelector("#filter-button");
     const previousButton = document.querySelector("#previous");
     const nextButton = document.querySelector("#next");
-    let filteredQuotes = [];
-    let index = 0;
+    const section = document.querySelector("section");
+    const authorInputElement = document.querySelector("#author-filter");
 
-    if (filterButton) {
-        filterButton.addEventListener("click", () => {
-            const author = document.querySelector("#author").value
-            console.log("Filtering quotes for author:", author); // Debugging log
-        
-            filteredQuotes = Arr1.filter((quote) => quote.author === author); // Assuming case and spaces match
-            console.log("Filtered quotes:", filteredQuotes); // Debugging log
-        
-            if (filteredQuotes.length > 0) {
-                section.innerHTML = `<p>${filteredQuotes[0].quote}</p><p>${filteredQuotes[0].author}</p>`;
-            } else 
-            {section.innerHTML = "<p>No quotes found</p>";}
-        });
-    }
+    // Only add event listeners if elements exist
+    filterButton?.addEventListener("click", () => {
+        const author = authorInputElement.value.trim(); // Trim the input
+        filteredQuotes = Arr1.filter(quote => quote.author.toLowerCase() === author.toLowerCase());
+        if (filteredQuotes.length > 0) {
+            index = 0;
+            section.innerHTML = `<p>${filteredQuotes[index].quote}</p><p>${filteredQuotes[index].author}</p>`;
+        } else {
+            section.innerHTML = `<p>No quotes found for ${author}</p>`;
+        }
+    });
 
-    // Implement event listeners for previousButton and nextButton to navigate through filteredQuotes
+    previousButton?.addEventListener("click", () => {
+        if (index > 0) {
+            index--;
+            section.innerHTML = `<p>${filteredQuotes[index].quote}</p><p>${filteredQuotes[index].author}</p>`;
+        }
+    });
 
-    if (previousButton) {
-        previousButton.addEventListener("click", () => {
-            if (index > 0) {
-                index--;
-                section.innerHTML = `<p>${filteredQuotes[index].quote}</p><p>${filteredQuotes[index].author}</p>`;
-            }
-        });
-    }
-
-    if (nextButton) {
-        nextButton.addEventListener("click", () => {
-            if (index < filteredQuotes.length - 1) {
-                index++;
-                section.innerHTML = `<p>${filteredQuotes[index].quote}</p><p>${filteredQuotes[index].author}</p>`;
-            }
-        });
-    }
+    nextButton?.addEventListener("click", () => {
+        if (index < filteredQuotes.length - 1) {
+            index++;
+            section.innerHTML = `<p>${filteredQuotes[index].quote}</p><p>${filteredQuotes[index].author}</p>`;
+        }
+    });
 });
