@@ -7,17 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Using a form, present the player with the random emoji and multiple choice options (including the correct name).-->
-    <div class="container">
         <h1>Emoji Guessing Game</h1>
-        <form id="form">
-            <div class="emoji" id="emoji"></div>
-            <div class="options" id="options"></div>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="result"></div>
-    </div>
-
-    <script type="module" src="script.js"></script>
+        <div id="root"></div>
+        <input id="guess">
+        <button onclick="guessEmoji()">Guess</button>
+        <div id="msg"></div>
+    <script src="script.js" defer async></script>
 </body>
 </html>
