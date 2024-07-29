@@ -1,30 +1,56 @@
 const express = require("express");
-const { products } = require("./config/data.js");
+const cors = require("cors");
+const productsRouter = require("./routes/productRouter");
+const usersRouter = require("./routes/usersRouter");
+
+
+
+const bp = require("body-parser");
+
+
 
 // console.log(products);
 
 const app = express();
 
+app.use(bp.urlencoded({ extended: true }));
+app.use(bp.json());
+app.use(cors());
+
+/** logger */
+const logger = (req, res, next) => {
+  console.log(req.method, req.url);
+  next();
+};
+
+
+const auth = (req, res, next) => {
+  const {admin} = req.query;
+  if (admin === 'true') {
+    next();
+  } else {
+    res.send({msg: 'you are not admin'})
+  }
+}
+
+app.use(logger)
+app.use(auth);
+
+/** static file */
+app.use('/', express.static('/public'));
+
+
+
 app.listen(5001, () => {
   console.log("run on 5001");
 });
 
-app.get("/api/products", (req, res) => {
-  res.json(products);
-});
+app.use('/', productsRouter);
+app.use('/users', usersRouter);
 
 /** get one product */
 /** params */
-app.get("/api/products/:id", (req, res) => {
-  console.log(req.params);
-  const { id } = req.params;
 
-  const myprod = products.find((item) => item.id == id);
-
-  if (!myprod) return res.status(404).json({ msg: "product not found" });
-
-  res.json(myprod);
-});
 
 /** query */
 app.get("/api/search", (req, res) => {
@@ -40,15 +66,11 @@ app.get("/api/search", (req, res) => {
   res.json(filtered);
 });
 
-const bodyParser = require("body-parser");
 
-app.use(bp.urlencoded({ extended: true }));
-app.use(bp.json());
 
-app.post("/api/products", (req, res) => {
-  console.log(req.body);
-  res.send("ok from post");
-});
+
+
+
 
 /**
  * app.get()
@@ -70,3 +92,4 @@ app.post("/api/products", (req, res) => {
 // app.post("/users", (req, res) => {
 //   res.send("hello form users route 1 ");
 // });
+
