@@ -3,7 +3,7 @@ const {db} = require('../config/knexconnect.js')
 const getAllUsers = () => {
     return db('users')
     .select('id', 'username', 'email', 'password', 'created_at', 'updated_at')
-    .orderBy('name')
+    .orderBy('username')
 };
 
 const insertUser = (username, email, password, created_at, updated_at) => {
