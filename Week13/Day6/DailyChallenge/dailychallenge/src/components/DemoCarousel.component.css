@@ -1,0 +1,11 @@
+
+
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.carousel-root {
+  max-width: 50%;
+}
