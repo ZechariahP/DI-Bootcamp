@@ -1,17 +1,18 @@
-import User from './components/User'
-import users from './users.json';
-console.log(users);
-
+import React from 'react';
+import './App.css';
+import Test from './components/Test.jsx';
+import TestClass from './components/TestClass.jsx';
+import Counter from './components/Counter.jsx';
+import Users from './components/Users.jsx';
 
 function App() {
   return (
     <>
-      <div>
-        {
-        users.map((item) => {
-          return <User key={item.id} info={item}/>
-        })}
-        </div>
+        <h2>Class vs. Function component</h2>
+        <Test text="Hello World"/>
+        <TestClass text="Hello World"/>
+        <Counter />
+        <Users />
     </>
   );
 }
