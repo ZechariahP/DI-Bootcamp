@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+#form {
+  background-color: #deb887;
+}
+
+#summary {
+  background-color: #1E5555;
+  color: white;
+}
