@@ -1,0 +1,87 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  border: 2px solid #ccc;
+  background-color: aquamarine;   
+  padding: 0; /* Add this line to remove default padding */
+}
+
+li {
+  padding: 1em;
+  border: 2px solid #ccc;
+  display: flex; /* Add this line to enable flexbox */
+  align-items: center; /* Add this line to vertically center the content */
+  position: relative; /* Add this line to make the position of the delete button relative to the list item */
+  text-decoration: line-through; /* Add this line to cross out the list item */
+}
+
+ul button {
+  background-color: aquamarine;
+  position: absolute; /* Add this line to make the position of the delete button absolute */
+  right: 0; /* Add this line to align the delete button to the right */
+  top: 50%; /* Add this line to vertically center the delete button */
+  transform: translateY(-50%); /* Add this line to vertically center the delete button */
+  border: none; /* Add this line to remove the border */
+  padding: 0; /* Add this line to remove the padding */
+  background-color: transparent; /* Add this line to make the background transparent */
+  cursor: pointer; /* Add this line to change the cursor to a pointer */
+}
+
+ul button:hover {
+  text-decoration: none; /* Add this line to remove the underline on hover */
+  outline: 2px solid #646cff; /* Add this line to show an outline on hover */
+  padding: 0.5em; /* Add this line to increase the padding on hover */
+}
