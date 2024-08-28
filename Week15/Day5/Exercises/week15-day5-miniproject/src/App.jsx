@@ -57,14 +57,19 @@ function App() {
                 <button onClick={handleAddTodo}>Add</button>
                 <ul>
                     {state.todos.map((todo, index) => (
-                        <li
-                            key={index}
-                            style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
-                            onClick={() => dispatch({ type: 'TOGGLE_TODO', payload: index })}
-                        >
-                            {todo.task}
-                            <button onClick={() => dispatch({ type: 'DELETE_TODO', payload: index })}>Delete</button>
-                        </li>
+                       <li
+                       key={index}
+                       style={{
+                           textDecoration: todo.completed ? 'line-through' : 'none',
+                           display: 'flex',
+                           justifyContent: 'space-between',
+                           alignItems: 'center',
+                       }}
+                       onClick={() => dispatch({ type: 'TOGGLE_TODO', payload: index })}
+                   >
+                       {todo.task}
+                       <button onClick={() => dispatch({ type: 'DELETE_TODO', payload: index })}>Delete</button>
+                   </li>
                     ))}
                 </ul>
             </div>
@@ -73,3 +78,7 @@ function App() {
 }
 
 export default App;
+
+
+
+

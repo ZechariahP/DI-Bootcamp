@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Cantarell", "Fira Sans", "Droid Sans", 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar,
+.rules {
+  background-color: red;
+  color: white;
+  margin-bottom: 3px;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+
+}
+
+.navbar > div {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem;
+  padding: 2rem;
+  
+}
+
+.hero-card {
+  border: 3px solid grey;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  text-align: center;
+  height: 400px;
+  cursor: pointer;
+}
+
+
+
+.hero-card .image-container {
+  height: 80%;
+  overflow: hidden;
+}
+
+.hero-card .image-container img {
+  width: 80%;
+}
+
+.bold {
+  font-weight: bold;
+}
