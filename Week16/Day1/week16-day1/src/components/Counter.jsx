@@ -1,7 +1,8 @@
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector, useDispatch, connect} from 'react-redux';
 import {increment, decrement} from '../redux/actions';
 
-const Counter = () => {
+
+const Counter = (props) => {
     const count = useSelector((state) => state.counter.count);
     
     const dispatch = useDispatch();
@@ -16,4 +17,17 @@ const Counter = () => {
     );
     };
 
-export default Counter;
+const mapState = (state) => {
+    return {
+        count: state.counter.count,
+    };
+};
+
+const mapDispatch = (dispatch) => {
+    return {
+        increment: () => dispatch(increment()),
+        decrement: () => dispatch(decrement()),
+    };
+};
+
+export default connect(mapState, mapDispatch)(Counter);
