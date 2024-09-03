@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, reset, incrementByNum, incrementBy2Nums, incrementWithPrepare } from './counterSlice';
+import { increment, decrement, reset, incrementByNum, incrementBy2Nums, incrementWithPrepare, delayIncrement, delayIncrementThunk } from './counterSlice';
 import { useRef } from 'react';
 
 const Counter = (props) => {
@@ -48,6 +48,9 @@ const Counter = (props) => {
             <input ref={numRefOne}/>
             <input ref={numRefTwo}/>
             <button onClick={() => add2NumsWithPrepare()}> Add Two Numbers </button>
+        </div>
+        <div>
+            <button onClick={() => dispatch(delayIncrementThunk())}>Delay Increment by 5</button>
         </div>
         </div>
     );

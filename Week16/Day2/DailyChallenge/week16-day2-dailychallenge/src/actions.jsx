@@ -12,11 +12,11 @@ export const addTask = (day, task) => {
     return {
         type: ADD_TASK,
         payload: {
-        day,
-        task,
+            day,
+            task,
         },
     };
-    };
+};
 
 export const editTask = (day, index, task) => {
     return {
