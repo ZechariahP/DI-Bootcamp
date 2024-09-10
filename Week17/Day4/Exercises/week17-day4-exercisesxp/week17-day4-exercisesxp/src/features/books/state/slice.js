@@ -29,7 +29,9 @@ export const booksSlice = createSlice({
       const selectedGenre = action.payload;
       state.books = books.filter(book => book.genre === selectedGenre);
     },
-  },
+    selectedGenre: (state) => {
+          return state.genre;
+      }, // Add a comma here
   extraReducers(builder) {
     builder
       .addCase(fetchBooks.pending, (state) => {
@@ -43,12 +45,11 @@ export const booksSlice = createSlice({
         state.status = 'failed';
       });
   },
+  },
 });
 
-export const selectStatus = (state) => state.books.status;
-export const sliceState = (state) => state.books;
-export const selectBooks = (state) => state.books.books;
-export const selectGenre = (state) => state.books.genre;
+export const status = (state) => state.books.status;
+export const genre = (state) => state.books.genre;
 
-export const { setGenre, selectBooksByGenre } = booksSlice.actions;
+export const { setGenre, selectBooksByGenre, selectedGenre } = booksSlice.actions;
 export default booksSlice.reducer;

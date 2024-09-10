@@ -1,8 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { sliceState } from './slice';
+import { status, genre } from './slice';
 
-export const selectBooks = createSelector([sliceState], (state) => state.books)
-
-export const selectStatus = createSelector([sliceState], (state) => state.status)
-
-export const selectSelectedGenre = createSelector([sliceState], (state) => state.selectedGenre)
+export const selectStatus = createSelector([status], (state) => state.status)
+export const selectSelectedGenre = createSelector([genre], (state) => state.selectedGenre)
+export const selectBooks = createSelector([genre], (state) => state.books)

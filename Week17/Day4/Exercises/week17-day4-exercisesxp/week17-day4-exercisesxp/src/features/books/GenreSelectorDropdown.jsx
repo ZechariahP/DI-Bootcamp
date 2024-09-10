@@ -49,5 +49,6 @@ const GenreSelectorDropdown = () => {
     );
 };
 
+
 const MemoizedGenreSelectorDropdown = memo(GenreSelectorDropdown);
 export default MemoizedGenreSelectorDropdown;

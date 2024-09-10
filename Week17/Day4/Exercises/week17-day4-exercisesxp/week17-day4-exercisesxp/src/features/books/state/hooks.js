@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useCallback } from 'react';
 import { fetchBooks } from './slice';
 import { selectBooks, selectStatus, selectSelectedGenre } from './selectors';
+import { useMemo } from 'react';
 
 export const useBooksSelector = () => {
     return useSelector(selectBooks);
