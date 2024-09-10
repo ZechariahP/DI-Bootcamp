@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { addCategory, editCategory, deleteCategory } from './tasks/state/categoriesSlice';
+import { useCategoryById } from './tasks/state/hooks';
 import { useDispatch, useSelector } from 'react-redux';
 
 function CategorySelector({ category }) {
     const dispatch = useDispatch();
-    const categories = useSelector(state => state.categories); // Get the categories from Redux store
-    const [newCategory, setNewCategory] = useState(''); // State to hold the new category input
-    const [editMode, setEditMode] = useState(false); // State to track if edit mode is enabled
+    const categories = useSelector(state => state.categories);
+    const [newCategory, setNewCategory] = useState('');
+    const [editMode, setEditMode] = useState(false);
 
     const handleAddCategory = () => {
         if (editMode) {
-            dispatch(editCategory(category.id, newCategory)); // Dispatch the action to edit the category
-            setEditMode(false); // Disable edit mode
+            dispatch(editCategory(category.id, newCategory));
+            setEditMode(false);
         } else {
-            dispatch(addCategory(newCategory)); // Dispatch the action to add the new category
+            dispatch(addCategory(newCategory));
         }
-        setNewCategory(''); // Clear the new category input
+        setNewCategory('');
     };
 
     const handleEditCategory = () => {
-        setEditMode(true); // Enable edit mode
-        setNewCategory(category.name); // Set the new category input to the current category name
+        setEditMode(true);
+        setNewCategory(category.name);
     };
 
     const handleDeleteCategory = () => {
-        dispatch(deleteCategory(category.id)); // Dispatch the action to delete the category
+        dispatch(deleteCategory(category.id));
     };
 
     return (
