@@ -1,0 +1,15 @@
+{
+  "name": "week19-day2-miniproject",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "vite": "^2.9.18"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
