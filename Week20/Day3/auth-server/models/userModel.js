@@ -37,4 +37,12 @@ module.exports = {
       throw error;
     }
   },
+  getUsers: async () => {
+    try {
+      const users = await db("authusers").select("id", "email");
+      return users;
+    } catch (error) {
+      throw error;
+    }
+}
 };

@@ -48,7 +48,6 @@ module.exports = {
       res.cookie("accessToken", accessToken, {
         httpOnly: true,
         maxAge: 60 * 1000,
-
       });
 
       res.json({
@@ -60,5 +59,39 @@ module.exports = {
       console.log(error);
       res.status(500).json({ message: "internal server error" });
     }
+  },
+  getUsers: async (req, res) => {
+    console.log(req);
+    try {
+      const users = await userModel.getUsers();
+      res.json(users);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "internal server error" });
+    }
+  },
+  verifyAuth: (req, res) => {
+    /** generate token */
+    const accessToken = jwt.sign(
+      { userid: req.userid, email: req.email },
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: "60s" }
+    );
+
+    /** set token in httpOnly cookie */
+    res.cookie("token", accessToken, {
+      httpOnly: true,
+      maxAge: 60 * 1000,
+    });
+
+    res.json({
+      message: "Auth successfuly",
+      user: { userid: req.userid, email: req.email },
+      accessToken,
+    });
+  },
+  logoutUser: (req, res) => {
+    res.clearCookie("token");
+    res.sendStatus(200);
   },
 };
