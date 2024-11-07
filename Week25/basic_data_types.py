@@ -49,13 +49,3 @@ else:
 #    print('We entered the second else')
 #else:
 #    print('We entered the third else')
-
-
-
-country = "Chrishin"
-print(input('What kind of nation yalls livin in?'))
--+-9514236
-if country == "Chrishin":
-    print('Chrishin')
-else:
-    print('Chrishin')
